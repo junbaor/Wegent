@@ -128,7 +128,7 @@ export function SearchableSelect({
 
         <PopoverContent
           className={cn(
-            'p-0 w-auto min-w-[var(--radix-popover-trigger-width)] max-w-[90vw] border border-border bg-base',
+            'p-0 w-auto min-w-[var(--radix-popover-trigger-width)] max-w-[min(90vw,400px)] border border-border bg-base',
             'shadow-xl rounded-xl overflow-hidden',
             'max-h-[var(--radix-popover-content-available-height,400px)]',
             'flex flex-col',
@@ -149,11 +149,11 @@ export function SearchableSelect({
               value={searchValue}
               onValueChange={handleSearchValueChange}
               className={cn(
-                'h-9 rounded-none border-b border-border flex-shrink-0',
+                'h-11 rounded-none border-b border-border flex-shrink-0',
                 'placeholder:text-text-muted text-sm'
               )}
             />
-            <CommandList className="min-h-[36px] max-h-[200px] overflow-y-auto flex-1">
+            <CommandList className="min-h-[36px] max-h-[min(60vh,300px)] overflow-y-auto flex-1">
               {error ? (
                 <div className="py-4 px-3 text-center text-sm text-error">{error}</div>
               ) : items.length === 0 ? (
@@ -174,12 +174,12 @@ export function SearchableSelect({
                         onSelect={() => handleSelect(item.value)}
                         className={cn(
                           'group cursor-pointer select-none',
-                          'px-3 py-1.5 text-sm text-text-primary',
+                          'px-3 py-2.5 text-sm text-text-primary',
                           'rounded-md mx-1 my-[2px]',
                           'data-[selected=true]:bg-primary/10 data-[selected=true]:text-primary',
                           'aria-selected:bg-hover',
                           'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
-                          '!flex !flex-row !items-start !gap-3'
+                          '!flex !flex-row !items-start !gap-3 min-h-[44px]'
                         )}
                       >
                         <Check

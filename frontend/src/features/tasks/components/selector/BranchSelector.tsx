@@ -211,7 +211,7 @@ export default function BranchSelector({
             error={showError ? error : null}
             emptyText={showNoBranch ? t('branches.no_branch') : t('branches.select_branch')}
             noMatchText={t('branches.no_match')}
-            contentClassName="max-w-[260px]"
+            contentClassName="max-w-[min(85vw,300px)]"
           />
         </div>
       </div>
@@ -250,7 +250,7 @@ export default function BranchSelector({
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <div className="relative" style={{ width: isMobile ? 200 : 260 }}>
+      <div className="relative" style={{ width: isMobile ? 220 : 260 }}>
         <SearchableSelect
           value={selectedBranch?.name}
           onValueChange={handleChange}
@@ -263,7 +263,7 @@ export default function BranchSelector({
           emptyText={showNoBranch ? t('branches.no_branch') : t('branches.select_branch')}
           noMatchText={t('branches.no_match')}
           triggerClassName="w-full border-0 shadow-none h-auto py-0 px-0 hover:bg-transparent focus:ring-0"
-          contentClassName="max-w-[260px]"
+          contentClassName="max-w-[min(85vw,300px)]"
           renderTriggerValue={item => {
             if (!item) return null;
             const branch = branches.find(b => b.name === item.value);
