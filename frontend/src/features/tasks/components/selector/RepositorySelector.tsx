@@ -472,7 +472,7 @@ export default function RepositorySelector({
             error={error}
             emptyText={t('branches.select_repository')}
             noMatchText={t('branches.no_match')}
-            contentClassName="max-w-[280px]"
+            contentClassName="max-w-[min(85vw,320px)]"
             footer={
               <div className="border-t border-border bg-base flex items-center justify-between px-2.5 py-2 text-xs text-text-secondary">
                 <div
@@ -526,7 +526,7 @@ export default function RepositorySelector({
     <div
       className={cn('flex items-center min-w-0', fullWidth && 'w-full')}
       data-tour="repo-selector"
-      style={fullWidth ? undefined : { maxWidth: isMobile ? 200 : 280 }}
+      style={fullWidth ? undefined : { maxWidth: isMobile ? 240 : 280 }}
     >
       <TooltipProvider>
         <Tooltip>
@@ -571,10 +571,10 @@ export default function RepositorySelector({
           noMatchText={t('branches.no_match')}
           className={fullWidth ? 'w-full' : undefined}
           triggerClassName="w-full border-0 shadow-none h-auto py-0 px-0 hover:bg-transparent focus:ring-0"
-          contentClassName={fullWidth ? 'max-w-[400px]' : 'max-w-[280px]'}
+          contentClassName={fullWidth ? 'max-w-[min(90vw,400px)]' : 'max-w-[min(85vw,320px)]'}
           renderTriggerValue={item => (
             <span className="block" title={item?.label}>
-              {item?.label ? truncateMiddle(item.label, fullWidth ? 60 : isMobile ? 20 : 25) : ''}
+              {item?.label ? truncateMiddle(item.label, fullWidth ? 60 : isMobile ? 24 : 25) : ''}
             </span>
           )}
           footer={
